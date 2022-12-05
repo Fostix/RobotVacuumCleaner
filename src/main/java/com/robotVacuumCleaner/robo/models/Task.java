@@ -3,11 +3,12 @@ package com.robotVacuumCleaner.robo.models;
 public class Task {
     private String id;
     private String task;
-    private int taskStatus;
+    private byte taskStatus;
 
-    public Task(String id, String task) {
+    public Task(String id, String task, byte taskStatus) {
         this.id = id;
         this.task = task;
+        this.taskStatus = taskStatus;
     }
 
     public String getId() {
