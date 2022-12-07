@@ -4,7 +4,6 @@ import com.robotVacuumCleaner.robo.models.TaskForRobot;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.media.Content;
 import io.swagger.v3.oas.annotations.media.Schema;
-import io.swagger.v3.oas.annotations.parameters.RequestBody;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import org.springframework.http.ResponseEntity;
@@ -17,10 +16,8 @@ public class CreateTaskInSchedule {
             tags = {"schedule"},
             operationId = "createTaskInSchedule",
             summary = "create schedule for robot",
-            requestBody = @RequestBody(description = "This is the request body desc.",
-                    content = @Content(schema = @Schema(implementation = TaskForRobot.class))),
             responses = {@ApiResponse(responseCode = "201", description = "Created task for robot",
-            content = @Content(schema = @Schema(hidden = true)))},
+                content = @Content(schema = @Schema(hidden = true)))},
             security = {@SecurityRequirement(name = "BearerJWT")}
     )
     @ApiResponse(responseCode = "400", description = "Bad request",
