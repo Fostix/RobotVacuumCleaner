@@ -1,4 +1,4 @@
-package com.robotVacuumCleaner.robo.controllers;
+package com.robotVacuumCleaner.robo.controllers.schedule;
 
 import com.robotVacuumCleaner.robo.models.TaskForRobot;
 import io.swagger.v3.oas.annotations.Operation;

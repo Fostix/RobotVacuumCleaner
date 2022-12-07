@@ -1,22 +1,16 @@
 package com.robotVacuumCleaner.robo.models;
 
-import java.time.format.DateTimeFormatter;
-
-public class TaskForRobot {
+public class TaskForRobot extends TaskForRobotOnlyLaunch{
     private int id;
-    private int robotId;
 
     private String task;
     private String dateTimeFrom;
 
-    private String instructionForRobot;
-
-    public TaskForRobot(int id, int robotId, String task, String dateTimeFrom, String instructionForRobot) {
+    public TaskForRobot(int id, int robotId, int roomId, String task, String dateTimeFrom, CleaningMode cleaningMode) {
+        super(robotId, roomId, cleaningMode);
         this.id = id;
-        this.robotId = robotId;
         this.task = task;
-        this.dateTimeFrom =  dateTimeFrom;
-        this.instructionForRobot = instructionForRobot;
+        this.dateTimeFrom = dateTimeFrom;
     }
 
     public int getId() {
@@ -27,14 +21,6 @@ public class TaskForRobot {
         this.id = id;
     }
 
-    public int getRobotId() {
-        return robotId;
-    }
-
-    public void setRobotId(int robotId) {
-        this.robotId = robotId;
-    }
-
     public String getTask() {
         return task;
     }
@@ -43,11 +29,11 @@ public class TaskForRobot {
         this.task = task;
     }
 
-    public String getInstructionForRobot() {
-        return instructionForRobot;
+    public String getDateTimeFrom() {
+        return dateTimeFrom;
     }
 
-    public void setInstructionForRobot(String instructionForRobot) {
-        this.instructionForRobot = instructionForRobot;
+    public void setDateTimeFrom(String dateTimeFrom) {
+        this.dateTimeFrom = dateTimeFrom;
     }
 }

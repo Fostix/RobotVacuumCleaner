@@ -11,7 +11,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
 @OpenAPIDefinition(
-		info = @Info(title = "Robot vacuum cleaner", version = "0.9.1"),
+		info = @Info(title = "Robot vacuum cleaner", version = "1.0.0"),
 		servers = @Server(url = "http://localhost:8080"),
 		tags = @Tag(name = "Web remote")
 )
