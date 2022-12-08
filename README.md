@@ -16,3 +16,26 @@ You can view the api documentation in swagger-ui by pointing to
 http://localhost:8080/
 
 Change default port value in application.properties
+
+All URIs are relative to *http://localhost:8080*
+
+Class | Method | HTTP request | Description
+------------ | ------------- | ------------- | -------------
+*FeedbackApi* | [**getFeedback**](docs/FeedbackApi.md#getfeedback) | **GET** /feedback/get |
+*FeedbackApi* | [**sendFeedback**](docs/FeedbackApi.md#sendfeedback) | **POST** /feedback |
+*ReturnrobotApi* | [**goBase**](docs/ReturnrobotApi.md#gobase) | **POST** /gobase |
+*RoomApi* | [**createRoom**](docs/RoomApi.md#createroom) | **POST** /room |
+*RoomApi* | [**deleteRoomById**](docs/RoomApi.md#deleteroombyid) | **DELETE** /room/{roomId} |
+*RoomApi* | [**getRoom**](docs/RoomApi.md#getroom) | **GET** /room/All |
+*RoomApi* | [**getRoomById**](docs/RoomApi.md#getroombyid) | **GET** /room{roomId} |
+*RoomApi* | [**updateRoom**](docs/RoomApi.md#updateroom) | **PUT** /room/{roomId} |
+*ScheduleApi* | [**createTaskInSchedule**](docs/ScheduleApi.md#createtaskinschedule) | **POST** /schedule/create | create schedule for robot
+*ScheduleApi* | [**createTaskInSchedule1**](docs/ScheduleApi.md#createtaskinschedule1) | **DELETE** /schedule/{taskId} | delete task in schedule
+*ScheduleApi* | [**getScheduleAllRobots**](docs/ScheduleApi.md#getscheduleallrobots) | **GET** /schedule/All |
+*ScheduleApi* | [**getScheduleByIdRobots**](docs/ScheduleApi.md#getschedulebyidrobots) | **GET** /schedule/{IdRobots} |
+*ScheduleApi* | [**updateTaskInSchedule**](docs/ScheduleApi.md#updatetaskinschedule) | **PUT** /schedule/{scheduleId} |
+*SendCleanTheRoomApi* | [**sendClean**](docs/SendCleanTheRoomApi.md#sendclean) | **POST** /sendclean/launch |
+*StatisticApi* | [**getStatistic**](docs/StatisticApi.md#getstatistic) | **GET** /statistic |
+*UserApi* | [**addNewUser**](docs/UserApi.md#addnewuser) | **POST** /registration | create user
+*UserApi* | [**getUser**](docs/UserApi.md#getuser) | **GET** /getUser |
+*UserApi* | [**updateUser**](docs/UserApi.md#updateuser) | **PUT** /updateUser | 
