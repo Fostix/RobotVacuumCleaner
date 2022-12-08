@@ -1,6 +1,5 @@
 package com.robotVacuumCleaner.robo.controllers;
 
-import com.robotVacuumCleaner.robo.models.TaskForRobot;
 import com.robotVacuumCleaner.robo.models.TaskForRobotOnlyLaunch;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.media.Content;
