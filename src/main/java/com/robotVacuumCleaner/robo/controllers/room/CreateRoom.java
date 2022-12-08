@@ -1,6 +1,7 @@
 package com.robotVacuumCleaner.robo.controllers.room;
 
 
+import com.robotVacuumCleaner.robo.controllers.StatusCodes;
 import com.robotVacuumCleaner.robo.models.Room;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.media.Content;
@@ -17,15 +18,9 @@ public class CreateRoom {
             tags = {"room"},
             operationId = "createRoom",
             responses = {@ApiResponse(responseCode = "201", description = "Created room",
-                content = @Content(schema = @Schema(hidden = true)))},
-            security = {@SecurityRequirement(name = "BearerJWT")}
+                content = @Content(schema = @Schema(hidden = true)))}
     )
-    @ApiResponse(responseCode = "400", description = "Bad request",
-            content = @Content(schema = @Schema(hidden = true)))
-    @ApiResponse(responseCode = "401", description = "Unauthorized authorized please",
-            content = @Content(schema = @Schema(hidden = true)))
-    @ApiResponse(responseCode = "408", description = "Request timeout",
-            content = @Content(schema = @Schema(hidden = true)))
+    @StatusCodes
     public ResponseEntity<Object> createRoom(@RequestBody Room room) {
         return ResponseEntity.ok().body(room);
     }

@@ -15,11 +15,6 @@ import java.lang.annotation.Target;
 
 @Retention(RetentionPolicy.RUNTIME)
 @Target(ElementType.METHOD)
-//@ApiResponse(responseCode = "200", description = "Ok",
-//        content = @Content(schema = @Schema(implementation = TaskForRobot.class),
-//                mediaType = MediaType.APPLICATION_JSON_VALUE))
-@ApiResponse(responseCode = "204", description = "no schedule",
-        content = @Content(schema = @Schema(hidden = true)))
 @ApiResponse(responseCode = "400", description = "Bad request",
         content = @Content(schema = @Schema(hidden = true)))
 @ApiResponse(responseCode = "401", description = "Unauthorized authorized please",

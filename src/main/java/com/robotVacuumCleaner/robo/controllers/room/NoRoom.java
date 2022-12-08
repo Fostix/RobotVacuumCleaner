@@ -11,7 +11,7 @@ import java.lang.annotation.Target;
 
 @Retention(RetentionPolicy.RUNTIME)
 @Target(ElementType.METHOD)
-@ApiResponse(responseCode = "204", description = "no schedule",
+@ApiResponse(responseCode = "204", description = "don't have any room",
         content = @Content(schema = @Schema(hidden = true)))
-public @interface NoSchedule {
+public @interface NoRoom {
 }

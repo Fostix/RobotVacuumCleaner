@@ -1,5 +1,6 @@
 package com.robotVacuumCleaner.robo.controllers.schedule;
 
+import com.robotVacuumCleaner.robo.controllers.StatusCodes;
 import com.robotVacuumCleaner.robo.models.TaskForRobot;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.media.Content;
@@ -19,20 +20,12 @@ public class DeleteTaskInSchedule {
             tags = {"schedule"},
             operationId = "createTaskInSchedule",
             summary = "delete task in schedule",
-            requestBody = @RequestBody(description = "This is the request body desc.",
-                    content = @Content(schema = @Schema(implementation = TaskForRobot.class))),
+            requestBody = @RequestBody(content = @Content(schema = @Schema(implementation = TaskForRobot.class))),
             responses = {@ApiResponse(responseCode = "200", description = "Deleted task for robot",
-                    content = @Content(schema = @Schema(hidden = true)))},
-            security = {@SecurityRequirement(name = "BearerJWT")}
+                    content = @Content(schema = @Schema(hidden = true)))}
     )
-    @ApiResponse(responseCode = "400", description = "Bad request",
-            content = @Content(schema = @Schema(hidden = true)))
-    @ApiResponse(responseCode = "401", description = "Unauthorized authorized please",
-            content = @Content(schema = @Schema(hidden = true)))
-    @ApiResponse(responseCode = "404", description = "don't found",
-            content = @Content(schema = @Schema(hidden = true)))
-    @ApiResponse(responseCode = "408", description = "Request timeout",
-            content = @Content(schema = @Schema(hidden = true)))
+    @StatusCodes
+    @NoSchedule
     public ResponseEntity<Object> deleteTaskInSchedule(@PathVariable String taskId) {
         return ResponseEntity.ok().body("Task deleted");
     }

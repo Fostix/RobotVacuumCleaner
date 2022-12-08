@@ -1,5 +1,6 @@
 package com.robotVacuumCleaner.robo.controllers.schedule;
 
+import com.robotVacuumCleaner.robo.controllers.StatusCodes;
 import com.robotVacuumCleaner.robo.models.TaskForRobot;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.media.Content;
@@ -17,17 +18,9 @@ public class CreateTaskInSchedule {
             operationId = "createTaskInSchedule",
             summary = "create schedule for robot",
             responses = {@ApiResponse(responseCode = "201", description = "Created task for robot",
-                content = @Content(schema = @Schema(hidden = true)))},
-            security = {@SecurityRequirement(name = "BearerJWT")}
+                content = @Content(schema = @Schema(hidden = true)))}
     )
-    @ApiResponse(responseCode = "400", description = "Bad request",
-            content = @Content(schema = @Schema(hidden = true)))
-    @ApiResponse(responseCode = "401", description = "Unauthorized authorized please",
-            content = @Content(schema = @Schema(hidden = true)))
-    @ApiResponse(responseCode = "408", description = "Request timeout",
-            content = @Content(schema = @Schema(hidden = true)))
-    @ApiResponse(responseCode = "418", description = "I'm a teapot",
-            content = @Content(schema = @Schema(hidden = true)))
+    @StatusCodes
     public ResponseEntity<Object> createTaskInSchedule(@RequestBody TaskForRobot taskForRobot) {
         return ResponseEntity.ok().body(taskForRobot);
     }
