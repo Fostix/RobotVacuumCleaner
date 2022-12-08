@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class SendClean {
     @PostMapping("sendclean/launch")
     @Operation(
-            tags = "send clean the room",
+            tags = "sendCleanTheRoom",
             responses = {@ApiResponse(responseCode = "201", description = "robot is going to base",
                     content = @Content(schema = @Schema(hidden = true)))},
             security = {@SecurityRequirement(name = "BearerJWT")}
