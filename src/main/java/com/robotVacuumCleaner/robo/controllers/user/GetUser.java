@@ -1,9 +1,6 @@
 package com.robotVacuumCleaner.robo.controllers.user;
 
 import com.robotVacuumCleaner.robo.controllers.StatusCodes;
-import com.robotVacuumCleaner.robo.controllers.schedule.NoSchedule;
-import com.robotVacuumCleaner.robo.models.CleaningMode;
-import com.robotVacuumCleaner.robo.models.TaskForRobot;
 import com.robotVacuumCleaner.robo.models.User;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.media.Content;

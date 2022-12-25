@@ -1,14 +1,16 @@
 package com.robotVacuumCleaner.robo.models;
 
-public class TaskForRobotOnlyLaunch {
+import com.robotVacuumCleaner.robo.models.CleaningMode.Interface.CleaningMode;
+
+public class TaskForRobotOnlyLaunch<CM extends CleaningMode> {
     private int robotId;
     private int roomId;
-    private CleaningMode cleaningMode;
+    private CleaningMode robotCleaningMode;
 
-    public TaskForRobotOnlyLaunch(int robotId, int roomId, CleaningMode cleaningMode) {
+    public TaskForRobotOnlyLaunch(int robotId, int roomId, CM robotCleaningMode) {
         this.robotId = robotId;
         this.roomId = roomId;
-        this.cleaningMode = cleaningMode;
+        this.robotCleaningMode = robotCleaningMode;
     }
 
     public int getRobotId() {
@@ -28,10 +30,10 @@ public class TaskForRobotOnlyLaunch {
     }
 
     public CleaningMode getCleaningMode() {
-        return cleaningMode;
+        return robotCleaningMode;
     }
 
-    public void setCleaningMode(CleaningMode cleaningMode) {
-        this.cleaningMode = cleaningMode;
+    public void setCleaningMode(CleaningMode robotCleaningMode) {
+        this.robotCleaningMode = robotCleaningMode;
     }
 }

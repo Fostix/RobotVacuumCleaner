@@ -1,5 +1,7 @@
 package com.robotVacuumCleaner.robo.models;
 
+import com.robotVacuumCleaner.robo.models.CleaningMode.Enum.NewCleaningMode;
+import com.robotVacuumCleaner.robo.models.CleaningMode.Interface.CleaningMode;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -10,14 +12,14 @@ class TaskForRobotOnlyLaunchTest {
     private TaskForRobotOnlyLaunch taskForRobotOnlyLaunch;
     private int robotId;
     private int roomId;
-    private CleaningMode cleaningMode;
+    private CleaningMode robotCleaningMode;
 
     @BeforeEach
     void setUp() {
         robotId = 0;
         roomId = 0;
-        cleaningMode = CleaningMode.DRY_CLEANING;
-        taskForRobotOnlyLaunch = new TaskForRobotOnlyLaunch(robotId, roomId, cleaningMode);
+        robotCleaningMode = NewCleaningMode.DRY_CLEANING;
+        taskForRobotOnlyLaunch = new TaskForRobotOnlyLaunch(robotId, roomId, robotCleaningMode);
     }
 
     @Test
@@ -46,13 +48,13 @@ class TaskForRobotOnlyLaunchTest {
 
     @Test
     void getCleaningMode() {
-        assertEquals(cleaningMode, taskForRobotOnlyLaunch.getCleaningMode());
+        assertEquals(robotCleaningMode, taskForRobotOnlyLaunch.getCleaningMode());
     }
 
     @Test
     void setCleaningMode() {
-        CleaningMode cleaningModeWet = CleaningMode.WET_CLEANING;
-        taskForRobotOnlyLaunch.setCleaningMode(cleaningModeWet);
-        assertEquals(cleaningModeWet, taskForRobotOnlyLaunch.getCleaningMode());
+        CleaningMode robotCleaningModeWet = NewCleaningMode.WET_CLEANING;
+        taskForRobotOnlyLaunch.setCleaningMode(robotCleaningModeWet);
+        assertEquals(robotCleaningModeWet, taskForRobotOnlyLaunch.getCleaningMode());
     }
 }

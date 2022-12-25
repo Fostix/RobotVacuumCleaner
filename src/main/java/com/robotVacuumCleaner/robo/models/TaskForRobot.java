@@ -1,13 +1,15 @@
 package com.robotVacuumCleaner.robo.models;
 
-public class TaskForRobot extends TaskForRobotOnlyLaunch{
+import com.robotVacuumCleaner.robo.models.CleaningMode.Interface.CleaningMode;
+
+public class TaskForRobot<CM extends CleaningMode> extends TaskForRobotOnlyLaunch{
     private int id;
 
     private String task;
     private String dateTimeFrom;
 
-    public TaskForRobot(int id, int robotId, int roomId, String task, String dateTimeFrom, CleaningMode cleaningMode) {
-        super(robotId, roomId, cleaningMode);
+    public TaskForRobot(int id, int robotId, int roomId, String task, String dateTimeFrom, CM robotCleaningMode) {
+        super(robotId, roomId, robotCleaningMode);
         this.id = id;
         this.task = task;
         this.dateTimeFrom = dateTimeFrom;

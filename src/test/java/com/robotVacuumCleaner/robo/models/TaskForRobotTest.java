@@ -1,9 +1,9 @@
 package com.robotVacuumCleaner.robo.models;
 
+import com.robotVacuumCleaner.robo.models.CleaningMode.Enum.NewCleaningMode;
+import com.robotVacuumCleaner.robo.models.CleaningMode.Interface.CleaningMode;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-
-import java.lang.ref.PhantomReference;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -15,7 +15,7 @@ class TaskForRobotTest {
     private int roomId;
     private String task;
     private String dateTimeFrom;
-    private CleaningMode cleaningMode;
+    private CleaningMode robotCleaningMode;
 
     @BeforeEach
     void setUp() {
@@ -24,8 +24,8 @@ class TaskForRobotTest {
         roomId = 0;
         task = "wash kitchen floors";
         dateTimeFrom = "11:00 every day";
-        cleaningMode = CleaningMode.WET_CLEANING;
-        taskForRobot = new TaskForRobot(id, robotId, roomId, task, dateTimeFrom, cleaningMode);
+        robotCleaningMode = NewCleaningMode.SUPER_DRY;
+        taskForRobot = new TaskForRobot(id, robotId, roomId, task, dateTimeFrom, robotCleaningMode);
     }
 
     @Test
